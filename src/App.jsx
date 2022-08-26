@@ -152,6 +152,7 @@ function Image({
   }, [entryPrice, closingPrice, coin, isLong, leverage]);
   return (
     <div>
+    <div>
       <div
         id="image"
         style={{
@@ -168,7 +169,7 @@ function Image({
             position: "absolute",
             left: "47px",
             top: "140px",
-            fontSize: "20px",
+            fontSize: "18px",
             color: "white",
             fontFamily: "HarmonyOS Sans",
             fontWeight: "500",
@@ -181,7 +182,7 @@ function Image({
             position: "absolute",
             right: numLocLR + "px",
             top: numsLoc[0] + "px",
-            fontSize: "20px",
+            fontSize: "18px",
             color: "white",
             fontFamily: "HarmonyOS Sans",
             fontWeight: "500",
@@ -194,7 +195,7 @@ function Image({
             position: "absolute",
             right: numLocLR + "px",
             top: numsLoc[1] + "px",
-            fontSize: "20px",
+            fontSize: "18px",
             color: "white",
             fontFamily: "HarmonyOS Sans",
             fontWeight: "500",
@@ -207,7 +208,7 @@ function Image({
             position: "absolute",
             right: numLocLR + "px",
             top: numsLoc[2] + "px",
-            fontSize: "20px",
+            fontSize: "18px",
             color: "white",
             fontFamily: "HarmonyOS Sans",
             fontWeight: "500",
