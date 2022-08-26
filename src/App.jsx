@@ -3,15 +3,38 @@ import "./App.css";
 import bgLong from "./bg_long.png";
 import bgShort from "./bg_short.png";
 import html2canvas from "html2canvas";
+import Draggable from "react-draggable";
 
 function App() {
   const [coin, setCoin] = useState("BTCUSDT");
   const [entryPrice, setEntryPrice] = useState(22898.0);
   const [closingPrice, setClosingPrice] = useState(23000.0);
   const [isLong, setIsLong] = useState(true);
+  const [coinLoc, setCoinLoc] = useState({ x: 47, y: 140 });
+  const [levLoc, setLevLoc] = useState({ x: 300, y: 267 });
+  const [entryLoc, setEntryLoc] = useState({ x: 300, y: 306 });
+  const [CloseLoc, setCloseLoc] = useState({ x: 300, y: 349 });
+  const [percentLoc, setPercentLoc] = useState({ x: 40, y: 192 });
   const [numsLoc, setNumsLoc] = useState([267, 306, 349]);
   const [numLocLR, setNumLocLR] = useState(300);
   const [leverage, setLeverage] = useState(75);
+  const [fontSize, setFontSize] = useState(0);
+  const [result, setResult] = useState(
+    ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
+  );
+
+  useEffect(() => {
+    const calculated = (
+      (closingPrice / entryPrice - 1) *
+      leverage *
+      100
+    ).toFixed(2);
+    if (!isLong && calculated < 0) {
+      setResult(-calculated);
+    } else {
+      setResult(calculated);
+    }
+  }, [entryPrice, closingPrice, coin, isLong, leverage]);
 
   function downLoad() {
     console.log("download started!");
@@ -46,6 +69,12 @@ function App() {
   }
   function right() {
     setNumLocLR(numLocLR - 1);
+  }
+  function fontUp() {
+    setFontSize(fontSize + 1)
+  }
+  function fontDown() {
+    setFontSize(fontSize - 1)
   }
 
   const onSaveAs = (uri, filename) => {
@@ -107,55 +136,13 @@ function App() {
       <button onClick={down}>숫자 아래로</button>
       <br />
       <br />
+      <button onClick={fontDown}>폰트 작게</button>
+      &nbsp;&nbsp;&nbsp;
+      <button onClick={fontUp}>폰트 크게</button>
+      &nbsp;&nbsp;&nbsp;
       <button onClick={downLoad}>다운로드</button>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <Image
-        entryPrice={entryPrice}
-        closingPrice={closingPrice}
-        coin={coin}
-        isLong={isLong}
-        numsLoc={numsLoc}
-        numLocLR={numLocLR}
-        leverage={leverage}
-      />
-      <br />
-      <br />
-      <div><i>Made By</i> <b>Jung Ji Ho</b></div>
-    </div>
-  );
-}
-
-function Image({
-  entryPrice,
-  closingPrice,
-  coin,
-  isLong,
-  numsLoc,
-  numLocLR,
-  leverage,
-}) {
-  const [result, setResult] = useState(
-    ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
-  );
-  useEffect(() => {
-    const calculated = (
-      (closingPrice / entryPrice - 1) *
-      leverage *
-      100
-    ).toFixed(2);
-    if (!isLong && calculated < 0) {
-      setResult(-calculated);
-    } else {
-      setResult(calculated);
-    }
-  }, [entryPrice, closingPrice, coin, isLong, leverage]);
-  return (
-    <div>
-    <div>
       <div
         id="image"
         style={{
@@ -167,98 +154,120 @@ function Image({
           position: "relative",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            left: "47px",
-            top: "140px",
-            fontSize: "18px",
-            color: "white",
-            fontFamily: "HarmonyOS Sans",
-            fontWeight: "500",
-          }}
-        >
-          {coin}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            right: numLocLR + "px",
-            top: numsLoc[0] + "px",
-            fontSize: "18px",
-            color: "white",
-            fontFamily: "HarmonyOS Sans",
-            fontWeight: "500",
-          }}
-        >
-          {leverage}X
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            right: numLocLR + "px",
-            top: numsLoc[1] + "px",
-            fontSize: "18px",
-            color: "white",
-            fontFamily: "HarmonyOS Sans",
-            fontWeight: "500",
-          }}
-        >
-          ₮{entryPrice}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            right: numLocLR + "px",
-            top: numsLoc[2] + "px",
-            fontSize: "18px",
-            color: "white",
-            fontFamily: "HarmonyOS Sans",
-            fontWeight: "500",
-          }}
-        >
-          ₮{closingPrice}
-        </div>
-
-        <div
-          style={{
-            position: "relative",
-          }}
-        >
+        <Draggable onDrag={(e, data) => setCoinLoc({ x: data.x, y: data.y })}>
           <div
             style={{
               position: "absolute",
-              left: "40px",
-              top: "192px",
-              fontSize: "38px",
-              color: "rgb(31, 163, 178)",
+              left: "47px",
+              top: "140px",
+              fontSize: fontSize + 20 + "px",
+              color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
+              cursor: "pointer"
             }}
           >
-            {result > 0 ? (
-              <span
-                style={{
-                  fontSize: "38px",
-                  fontWeight: "400",
-                }}
-              >
-                +
-              </span>
-            ) : (
-              ""
-            )}
-            {result}
-            <span
+            {coin}
+          </div>
+        </Draggable>
+        <Draggable onDrag={(e, data) => setLevLoc({ x: data.x, y: data.y })}>
+          <div
+            style={{
+              position: "absolute",
+              right: numLocLR + "px",
+              top: numsLoc[0] + "px",
+              fontSize: fontSize + 20 + "px",
+              color: "white",
+              fontFamily: "HarmonyOS Sans",
+              fontWeight: "500",
+              cursor: "pointer"
+            }}
+          >
+            {leverage}X
+          </div>
+        </Draggable>
+        <Draggable onDrag={(e, data) => setEntryLoc({ x: data.x, y: data.y })}>
+          <div
+            style={{
+              position: "absolute",
+              right: numLocLR + "px",
+              top: numsLoc[1] + "px",
+              fontSize: fontSize + 20 + "px",
+              color: "white",
+              fontFamily: "HarmonyOS Sans",
+              fontWeight: "500",
+              cursor: "pointer"
+            }}
+          >
+            ₮{entryPrice}
+          </div>
+        </Draggable>
+
+        <Draggable onDrag={(e, data) => setCloseLoc({ x: data.x, y: data.y })}>
+          <div
+            style={{
+              position: "absolute",
+              right: numLocLR + "px",
+              top: numsLoc[2] + "px",
+              fontSize: fontSize + 20 + "px",
+              color: "white",
+              fontFamily: "HarmonyOS Sans",
+              fontWeight: "500",
+              cursor: "pointer"
+            }}
+          >
+            ₮{closingPrice}
+          </div>
+        </Draggable>
+        <Draggable
+          onDrag={(e, data) => setPercentLoc({ x: data.x, y: data.y })}
+        >
+          <div
+            style={{
+              position: "relative",
+            }}
+          >
+            <div
               style={{
-                fontSize: "24px",
+                position: "absolute",
+                left: "40px",
+                top: "192px",
+                fontSize: fontSize + 38 + "px",
+                color: "rgb(31, 163, 178)",
+                fontFamily: "HarmonyOS Sans",
                 fontWeight: "500",
+                cursor: "pointer"
               }}
             >
-              %
-            </span>
+              {result > 0 ? (
+                <span
+                  style={{
+                    fontSize: fontSize + 38 + "px",
+                    fontWeight: "400",
+                  }}
+                >
+                  +
+                </span>
+              ) : (
+                ""
+              )}
+              {result}
+              <span
+                style={{
+                  fontSize: fontSize + 24 + "px",
+                  fontWeight: "500",
+                }}
+              >
+                %
+              </span>
+            </div>
           </div>
-        </div>
+        </Draggable>
+      </div>
+      <br />
+      <br />
+      <div>
+        <i>Made By</i> <b>Jung Ji Ho</b>
       </div>
     </div>
   );
