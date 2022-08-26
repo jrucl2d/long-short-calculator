@@ -24,6 +24,10 @@ function App() {
   );
 
   useEffect(() => {
+      console.log(coinLoc, levLoc, entryLoc, CloseLoc, percentLoc);
+  }, [coin])
+
+  useEffect(() => {
     const calculated = (
       (closingPrice / entryPrice - 1) *
       leverage *
