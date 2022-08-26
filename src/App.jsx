@@ -111,6 +111,8 @@ function App() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
       <Image
         entryPrice={entryPrice}
         closingPrice={closingPrice}
