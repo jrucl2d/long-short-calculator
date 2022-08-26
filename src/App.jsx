@@ -110,6 +110,7 @@ function App() {
       <button onClick={downLoad}>다운로드</button>
       <br />
       <br />
+      <br />
       <Image
         entryPrice={entryPrice}
         closingPrice={closingPrice}
@@ -151,8 +152,6 @@ function Image({
     }
   }, [entryPrice, closingPrice, coin, isLong, leverage]);
   return (
-    <div>
-    <div>
     <div>
     <div>
       <div
