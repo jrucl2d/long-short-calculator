@@ -153,6 +153,8 @@ function Image({
   return (
     <div>
     <div>
+    <div>
+    <div>
       <div
         id="image"
         style={{
