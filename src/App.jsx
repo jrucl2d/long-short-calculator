@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import bgLong from "./bg_long.png";
 import bgShort from "./bg_short.png";
+import tanguPic from "./tangu.png";
 import html2canvas from "html2canvas";
 import Draggable from "react-draggable";
 
@@ -22,10 +23,11 @@ function App() {
   const [result, setResult] = useState(
     ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
   );
+  const [tangu, setTangu] = useState(false);
 
   useEffect(() => {
-      console.log(coinLoc, levLoc, entryLoc, CloseLoc, percentLoc);
-  }, [coin])
+    console.log(coinLoc, levLoc, entryLoc, CloseLoc, percentLoc);
+}, [coin]);
 
   useEffect(() => {
     const calculated = (
@@ -150,7 +152,7 @@ function App() {
       <div
         id="image"
         style={{
-          backgroundImage: `url(${isLong ? bgLong : bgShort})`,
+          backgroundImage: `url(${tangu ? tanguPic : (isLong ? bgLong : bgShort)})`,
           backgroundSize: "cover",
           height: "570px",
           width: "570px",
@@ -271,7 +273,7 @@ function App() {
       <br />
       <br />
       <div>
-        <i>Made By</i> <b>Jung Ji Ho</b>
+        <i>Made By</i> <b>Jung Ji </b><span onClick={() => setTangu(!tangu)}><b>Ho</b></span>
       </div>
     </div>
   );
