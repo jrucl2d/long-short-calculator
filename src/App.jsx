@@ -11,11 +11,11 @@ function App() {
   const [entryPrice, setEntryPrice] = useState(22898.0);
   const [closingPrice, setClosingPrice] = useState(23000.0);
   const [isLong, setIsLong] = useState(true);
-  const [coinLoc, setCoinLoc] = useState({ x: 47, y: 140 });
-  const [levLoc, setLevLoc] = useState({ x: 300, y: 267 });
-  const [entryLoc, setEntryLoc] = useState({ x: 300, y: 306 });
-  const [CloseLoc, setCloseLoc] = useState({ x: 300, y: 349 });
-  const [percentLoc, setPercentLoc] = useState({ x: 47, y: 160 });
+  const [coinLoc, setCoinLoc] = useState({ x: 43, y: 140 });
+  const [levLoc, setLevLoc] = useState({ x: 300, y: 200 });
+  const [entryLoc, setEntryLoc] = useState({ x: 300, y: 220 });
+  const [CloseLoc, setCloseLoc] = useState({ x: 300, y: 240 });
+  const [percentLoc, setPercentLoc] = useState({ x: 43, y: 160 });
   const [numsLoc, setNumsLoc] = useState([267, 306, 349]);
   const [numLocLR, setNumLocLR] = useState(300);
   const [leverage, setLeverage] = useState(75);
