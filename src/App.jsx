@@ -15,7 +15,7 @@ function App() {
   const [levLoc, setLevLoc] = useState({ x: 300, y: 267 });
   const [entryLoc, setEntryLoc] = useState({ x: 300, y: 306 });
   const [CloseLoc, setCloseLoc] = useState({ x: 300, y: 349 });
-  const [percentLoc, setPercentLoc] = useState({ x: 40, y: 192 });
+  const [percentLoc, setPercentLoc] = useState({ x: 43, y: 170 });
   const [numsLoc, setNumsLoc] = useState([267, 306, 349]);
   const [numLocLR, setNumLocLR] = useState(300);
   const [leverage, setLeverage] = useState(75);
