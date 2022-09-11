@@ -258,7 +258,6 @@ function App() {
               </span>
             </div>
           </div>
-        </Draggable>
       </div>
       <br />
       <br />
