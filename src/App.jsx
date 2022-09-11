@@ -10,11 +10,6 @@ function App() {
   const [entryPrice, setEntryPrice] = useState(22898.0);
   const [closingPrice, setClosingPrice] = useState(23000.0);
   const [isLong, setIsLong] = useState(true);
-  const [coinLoc, setCoinLoc] = useState({ x: 43, y: 140 });
-  const [levLoc, setLevLoc] = useState({ x: 300, y: 200 });
-  const [entryLoc, setEntryLoc] = useState({ x: 300, y: 220 });
-  const [CloseLoc, setCloseLoc] = useState({ x: 300, y: 240 });
-  const [percentLoc, setPercentLoc] = useState({ x: 43, y: 160 });
   const [numsLoc, setNumsLoc] = useState([247, 284, 320]);
   const [numLocLR, setNumLocLR] = useState(290);
   const [leverage, setLeverage] = useState(75);
@@ -23,9 +18,6 @@ function App() {
     ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
   );
   const [tangu, setTangu] = useState(false);
-
-  useEffect(() => {
-
 
   useEffect(() => {
     const calculated = (
