@@ -160,7 +160,7 @@ function App() {
           position: "relative",
         }}
       >
-        <Draggable onDrag={(e, data) => setCoinLoc({ x: data.x, y: data.y })}>
+
           <div
             style={{
               position: "absolute",
@@ -175,8 +175,7 @@ function App() {
           >
             {coin}
           </div>
-        </Draggable>
-        <Draggable onDrag={(e, data) => setLevLoc({ x: data.x, y: data.y })}>
+         
           <div
             style={{
               position: "absolute",
@@ -191,8 +190,6 @@ function App() {
           >
             {leverage}X
           </div>
-        </Draggable>
-        <Draggable onDrag={(e, data) => setEntryLoc({ x: data.x, y: data.y })}>
           <div
             style={{
               position: "absolute",
@@ -207,9 +204,6 @@ function App() {
           >
             ₮{entryPrice}
           </div>
-        </Draggable>
-
-        <Draggable onDrag={(e, data) => setCloseLoc({ x: data.x, y: data.y })}>
           <div
             style={{
               position: "absolute",
@@ -224,9 +218,6 @@ function App() {
           >
             ₮{closingPrice}
           </div>
-        </Draggable>
-        <Draggable
-          onDrag={(e, data) => setPercentLoc({ x: data.x, y: data.y })}
         >
           <div
             style={{
