@@ -4,7 +4,6 @@ import bgLong from "./bg_long.png";
 import bgShort from "./bg_short.png";
 import tanguPic from "./tangu.png";
 import html2canvas from "html2canvas";
-import Draggable from "react-draggable";
 
 function App() {
   const [coin, setCoin] = useState("BTCUSDT");
