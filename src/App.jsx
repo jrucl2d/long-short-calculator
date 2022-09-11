@@ -4,7 +4,6 @@ import bgLong from "./bg_long.png";
 import bgShort from "./bg_short.png";
 import tanguPic from "./tangu.png";
 import html2canvas from "html2canvas";
-import Draggable from "react-draggable"
 
 function App() {
   const [coin, setCoin] = useState("BTCUSDT");
@@ -170,7 +169,7 @@ function App() {
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
-              cursor: "pointer"
+
             }}
           >
             {coin}
@@ -185,7 +184,7 @@ function App() {
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
-              cursor: "pointer"
+
             }}
           >
             {leverage}X
@@ -199,7 +198,7 @@ function App() {
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
-              cursor: "pointer"
+
             }}
           >
             ₮{entryPrice}
@@ -213,7 +212,7 @@ function App() {
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
-              cursor: "pointer"
+
             }}
           >
             ₮{closingPrice}
@@ -233,7 +232,7 @@ function App() {
                 color: "rgb(31, 163, 178)",
                 fontFamily: "HarmonyOS Sans",
                 fontWeight: "500",
-                cursor: "pointer"
+
               }}
             >
               {result > 0 ? (
