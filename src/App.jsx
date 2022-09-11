@@ -25,8 +25,7 @@ function App() {
   const [tangu, setTangu] = useState(false);
 
   useEffect(() => {
-    console.log(coinLoc, levLoc, entryLoc, CloseLoc, percentLoc);
-}, [coin]);
+
 
   useEffect(() => {
     const calculated = (
