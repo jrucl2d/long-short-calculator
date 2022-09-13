@@ -171,7 +171,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[0] + "px",
-              fontSize: fontSize + 20 + "px",
+              fontSize: fontSize + 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -185,7 +185,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[1] + "px",
-              fontSize: fontSize + 20 + "px",
+              fontSize: fontSize + 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -199,7 +199,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[2] + "px",
-              fontSize: fontSize + 20 + "px",
+              fontSize: fontSize + 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -219,7 +219,7 @@ function App() {
                 position: "absolute",
                 left: "40px",
                 top: "150px",
-                fontSize: fontSize + 38 + "px",
+                fontSize: fontSize + 37 + "px",
                 color: "rgb(31, 163, 178)",
                 fontFamily: "HarmonyOS Sans",
                 fontWeight: "500",
@@ -229,7 +229,7 @@ function App() {
               {result > 0 ? (
                 <span
                   style={{
-                    fontSize: fontSize + 38 + "px",
+                    fontSize: fontSize + 37 + "px",
                     fontWeight: "400",
                   }}
                 >
@@ -241,7 +241,7 @@ function App() {
               {result}
               <span
                 style={{
-                  fontSize: fontSize + 24 + "px",
+                  fontSize: fontSize + 23 + "px",
                   fontWeight: "500",
                 }}
               >
