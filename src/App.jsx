@@ -66,12 +66,7 @@ function App() {
   function right() {
     setNumLocLR(numLocLR - 1);
   }
-  function fontUp() {
-    setFontSize(fontSize + 1)
-  }
-  function fontDown() {
-    setFontSize(fontSize - 1)
-  }
+
 
   const onSaveAs = (uri, filename) => {
     var link = document.createElement("a");
