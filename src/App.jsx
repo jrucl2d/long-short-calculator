@@ -199,7 +199,7 @@ function App() {
           >
             ₮{closingPrice}
           </div>
-        >
+
           <div
             style={{
               position: "relative",
