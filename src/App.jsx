@@ -126,10 +126,14 @@ function App() {
       <br />
       <button onClick={down}>숫자 아래로</button>
       <br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br />
+      <button onClick={fontup}>폰트 크게</button>
+      &nbsp;&nbsp;&nbsp
+      <button onClick={fontdown}>폰트 작게</button>
+      &nbsp;&nbsp;&nbsp
       <button onClick={downLoad}>다운로드</button>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+      <br />
+      <br />
       <div
         id="image"
         style={{
