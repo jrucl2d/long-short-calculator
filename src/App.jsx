@@ -131,10 +131,10 @@ function App() {
       <br />
       <button onClick={down}>숫자 아래로</button>
       <br />
-      <br />
+
       <button onClick={downLoad}>다운로드</button>
       <br />
-      <br />
+
       <div
         id="image"
         style={{
