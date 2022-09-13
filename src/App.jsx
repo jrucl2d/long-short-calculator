@@ -227,7 +227,7 @@ function App() {
                   +
                 </span>
               ) : (
-               
+              ""
               )}
               {result}
               <span
