@@ -13,7 +13,6 @@ function App() {
   const [numsLoc, setNumsLoc] = useState([248, 285, 321]);
   const [numLocLR, setNumLocLR] = useState(290);
   const [leverage, setLeverage] = useState(75);
-  const [fontSize, setFontSize] = useState(0);
   const [result, setResult] = useState(
     ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
   );
@@ -147,7 +146,7 @@ function App() {
               position: "absolute",
               left: "43px",
               top: "135px",
-              fontSize: fontSize + 19 + "px",
+              fontSize: 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -162,7 +161,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[0] + "px",
-              fontSize: fontSize + 19 + "px",
+              fontSize: 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -176,7 +175,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[1] + "px",
-              fontSize: fontSize + 19 + "px",
+              fontSize: 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -190,7 +189,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[2] + "px",
-              fontSize: fontSize + 19 + "px",
+              fontSize: 19 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -210,7 +209,7 @@ function App() {
                 position: "absolute",
                 left: "40px",
                 top: "150px",
-                fontSize: fontSize + 37 + "px",
+                fontSize: 37 + "px",
                 color: "rgb(31, 163, 178)",
                 fontFamily: "HarmonyOS Sans",
                 fontWeight: "500",
@@ -220,7 +219,7 @@ function App() {
               {result > 0 ? (
                 <span
                   style={{
-                    fontSize: fontSize + 37 + "px",
+                    fontSize: 37 + "px",
                     fontWeight: "400",
                   }}
                 >
@@ -232,7 +231,7 @@ function App() {
               {result}
               <span
                 style={{
-                  fontSize: fontSize + 23 + "px",
+                  fontSize: 23 + "px",
                   fontWeight: "500",
                 }}
               >
