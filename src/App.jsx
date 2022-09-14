@@ -11,7 +11,7 @@ function App() {
   const [closingPrice, setClosingPrice] = useState(23000.0);
   const [isLong, setIsLong] = useState(true);
   const [numsLoc, setNumsLoc] = useState([248, 285, 321]);
-  const [numLocLR, setNumLocLR] = useState(290);
+  const [numLocLR, setNumLocLR] = useState(315);
   const [leverage, setLeverage] = useState(75);
   const [result, setResult] = useState(
     ((closingPrice / entryPrice - 1) * 75 * 100).toFixed(2)
@@ -161,7 +161,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[0] + "px",
-              fontSize: 19 + "px",
+              fontSize: 18 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -175,7 +175,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[1] + "px",
-              fontSize: 19 + "px",
+              fontSize: 18 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -189,7 +189,7 @@ function App() {
               position: "absolute",
               right: numLocLR + "px",
               top: numsLoc[2] + "px",
-              fontSize: 19 + "px",
+              fontSize: 18 + "px",
               color: "white",
               fontFamily: "HarmonyOS Sans",
               fontWeight: "500",
@@ -209,7 +209,7 @@ function App() {
                 position: "absolute",
                 left: "40px",
                 top: "170px",
-                fontSize: 37 + "px",
+                fontSize: 40 + "px",
                 color: "rgb(31, 163, 178)",
                 fontFamily: "HarmonyOS Sans",
                 fontWeight: "500",
@@ -219,7 +219,7 @@ function App() {
               {result > 0 ? (
                 <span
                   style={{
-                    fontSize: 37 + "px",
+                    fontSize: 40 + "px",
                     fontWeight: "400",
                   }}
                 >
@@ -231,7 +231,7 @@ function App() {
               {result}
               <span
                 style={{
-                  fontSize: 23 + "px",
+                  fontSize: 20 + "px",
                   fontWeight: "500",
                 }}
               >
